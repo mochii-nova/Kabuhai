@@ -1,0 +1,99 @@
+/* Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 40px 16px;
+}
+
+.page-wrapper {
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+h2 {
+    margin-bottom: 8px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+/* Panels */
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+hr.divider {
+    margin: 12px 0 20px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+button[type="submit"] {
+    margin-top: 8px;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+
+.msg-success,
+.msg-error {
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.msg-success {
+    border: 1px solid green;
+}
+
+.msg-error {
+    border: 1px solid red;
+}
+
+.error-list {
+    margin-top: 6px;
+    padding-left: 18px;
+}
+
+.error-list li {
+    margin-bottom: 4px;
+}
+
+.switch-link {
+    margin-top: 16px;
+}

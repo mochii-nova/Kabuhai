@@ -1,0 +1,17 @@
+includes/config.php
+includes/connection.php
+
+*.sql
+
+*.log
+/error_log
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+/nbproject/
