@@ -19,25 +19,25 @@ if ($email === "" || $password === "") {
     exit();
 }
 
-// Check if user exists
-$stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+// Check if user exists 
+$stmt = $conn->prepare("SELECT id, name, email, password FROM users WHERE email = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 
 // Verify password
 if (!$user || !password_verify($password, $user['password'])) {
     $_SESSION['login_error'] = "Invalid email or password.";
-    header('Location:  ../pages/login.php?tab=login');
+    header('Location: ../pages/login.php?tab=login');
     exit();
 }
 
-// Ser session
+// Set session
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['user_name'] = $user['name'];
-$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_email'] = $user['email'];  
 
-// Redirect
-$_SESSION['success_message'] = "Login successful!, Welcome back, " . $user['name'] . "!";
-header('Location: ..index.php');
+// Redirect 
+$_SESSION['login_success'] = "Login successful! Welcome back, " . $user['name'] . "!";
+header('Location: ../pages/index.php');
 exit();
 ?>

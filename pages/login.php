@@ -3,14 +3,14 @@ session_start();
 
 // redirect if already logged in
 if (isset($_SESSION['user_id'])) {
-    header('Location: ../index.php'); 
+    header('Location: ../pages/index.php');  
     exit;
 }
 
 // active tab
 $active_tab = 'login';
 if (
-    (isset($_GET['tab']) && $_GET['tab'] === 'register' || !empty($_SESSION['register_error']))
+    (isset($_GET['tab']) && $_GET['tab'] === 'register') || !empty($_SESSION['register_error'])  
 ) {
     $active_tab = 'register';
 }
@@ -22,7 +22,7 @@ $register_error = $_SESSION['register_error'] ?? [];
 $register_success = $_SESSION['register_success'] ?? null;
 $register_old = $_SESSION['register_old'] ?? [];
 
-// clear messages
+// Clear messages 
 unset(
     $_SESSION['login_error'],
     $_SESSION['login_success'],
@@ -54,11 +54,11 @@ $logged_in = isset($_SESSION['user_id']);
 
             <!-- Show message -->
             <?php if ($register_success): ?>
-                <div class="msg-success"<?= htmlspecialchars($register_success) ?>></div>
+                <div class="msg-success"><?= htmlspecialchars($register_success) ?></div>
             <?php endif; ?>
 
             <?php if ($login_success): ?>
-                <div class="msg-success"<?= htmlspecialchars($login_success) ?>></div>
+                <div class="msg-success"><?= htmlspecialchars($login_success) ?></div>  
             <?php endif; ?>
 
             <?php if ($login_error): ?>
@@ -94,7 +94,7 @@ $logged_in = isset($_SESSION['user_id']);
 
             <p class="switch-link">
                 Don't have an account? 
-                <a href="#" onclick="switchTab('register')">Register here</a>
+                <a href="?tab=register">Register here</a>
             </p>
         </div>
     
@@ -171,13 +171,12 @@ $logged_in = isset($_SESSION['user_id']);
 
             <p class="switch-link">
                 Already have an account?
-                <a href="#" onclick="switchTab('login'); return false;">Log in here</a>
+                <a href="?tab=login">Log in here</a>
             </p>
         </div>
     </div>
 
     <script>
-        // switch tab
         function switchTab(tab) {
             document.getElementById('panel-login').classList.remove('active');
             document.getElementById('panel-register').classList.remove('active');
