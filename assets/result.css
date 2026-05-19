@@ -1,0 +1,95 @@
+/* Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+}
+
+nav a {
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+/* Wrapper */
+.result-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+/* Search again */
+.search-again {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.search-again input {
+    flex: 1;
+    min-width: 140px;
+    padding: 8px;
+}
+
+.search-again button {
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+/* Result */
+.result-count {
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.job-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+}
+
+.job-card h2 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.job-meta {
+    margin-bottom: 10px;
+}
+
+.job-meta span {
+    margin-right: 16px;
+}
+
+.job-description {
+    margin-bottom: 12px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.card-actions a,
+.card-actions button {
+    padding: 6px 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Empty */
+.no-results {
+    padding: 40px 0;
+}

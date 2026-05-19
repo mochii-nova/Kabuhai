@@ -74,18 +74,21 @@ $total = count($jobs);
                 in <strong><?= htmlspecialchars($location) ?></strong>.
             <?php endif; ?>
         </p>
-
+        
         <!-- Job cards -->
         <?php if ($total > 0): ?>
 
             <?php foreach ($jobs as $index => $job): ?>
                 <div class="job-card">
-                    <h2><?= htmlspecialchars($job['title']) ?></h2>
 
-                    <div class="job meta">
-                        <span><?= htmlspecialchars($job['company']) ?></span>
-                        <span><?= htmlspecialchars($job['location']) ?></span>
-                        <span><?= htmlspecialchars($job['source']) ?></span>
+                    <!-- Header -->
+                    <div class="job-header">
+                        <h1><?= htmlspecialchars($job['title']) ?></h1>
+                        <div class="job-meta">
+                            <span><strong>Company:</strong> <?= htmlspecialchars($job['company']) ?></span>
+                            <span><strong>Location:</strong> <?= htmlspecialchars($job['location']) ?></span>
+                            <span><strong>Source:</strong> <?= htmlspecialchars($job['source']) ?></span>
+                        </div>
                     </div>
 
                     <!-- Truncated -->
